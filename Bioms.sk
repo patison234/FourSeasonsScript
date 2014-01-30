@@ -1,0 +1,14 @@
+every 5 minutes:
+	loop all players:
+		if {season.winter} is true:
+			set biome at the loop-player to Ice Plains
+			stop
+		if {season.autumn} is true:
+			set biome at the loop-player to Mesa
+			stop
+		if {season.summer} is true:
+			set biome at the loop-player to forest
+			stop
+		if {season.spring} is true:
+			set biome at the loop-player to flowe forest
+			stop
