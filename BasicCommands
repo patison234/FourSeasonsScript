@@ -1,0 +1,38 @@
+command /@komenda} [<text>] [<text>]:
+	aliases: {@aliasy}
+	trigger:
+		if arg 1 is not set:
+			if player has permission "fourseason.help" or "fourseason.*":
+				send "&8========{@tag}&8=========="
+				send "&4     Admin Commands       "
+				send "&6/{@komenda} - &aPokazuje liste komend!"
+				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&6/{@komenda} score off - &awylacza scoreboarda!"
+				send "&6/{@komenda} score on - &aWlacza scoreboarda!"
+				send "&8=========================="
+				stop
+			else:
+				send "&8========{@tag}&8=========="
+				send "&4    Player Commands       "
+				send "&6/{@komenda} - &aPokazuje liste komend!"
+				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&8=========================="
+				stop
+		if arg 1 is "help" or "pomoc":
+			if player has permission "fourseason.help" or "fourseason.*":
+				send "&8========{@tag}&8=========="
+				send "&4     Admin Commands       "
+				send "&6/{@komenda} - &aPokazuje liste komend!"
+				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&6/{@komenda} score off - &awylacza scoreboarda!"
+				send "&6/{@komenda} score on - &aWlacza scoreboarda!"
+				send "&8=========================="
+				stop
+			else:
+				send "&8========{@tag}&8=========="
+				send "&4    Player Commands       "
+				send "&6/{@komenda} - &aPokazuje liste komend!"
+				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&8=========================="
+				stop
+				
