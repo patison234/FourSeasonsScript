@@ -1,0 +1,41 @@
+every minecraft day:
+        add 1 to {season.days}
+        if {season.days} is 30:
+                add 1 to {season.month}
+                set {season.days} to 0
+        if {season.month} is 1:
+                set {season.winter} to false
+                set {season.autumn} to false
+                set {season.summer} to false
+                set {season.spring} to true
+        if {season.month} is 2:
+                set {season.winter} to false
+                set {season.autumn} to false
+                set {season.summer} to true
+                set {season.spring} to false
+        if {season.month} is 3:
+                set {season.winter} to false
+                set {season.autumn} to true
+                set {season.summer} to false
+                set {season.spring} to false
+        if {season.month} is 4:
+                set {seasons.month} to 0
+                broadcast "{@tag} &aNadszedl nowy rok wszystkiego najlepszego!"
+                set {season.winter} to true
+                set {season.autumn} to false
+                set {season.summer} to false
+                set {season.spring} to false
+                
+every 20 minutes:
+	if {season.winter} is true:
+		set {_winter} to a random integer between {@wintermin} and {@wintermax}
+		set {season.temp} to {_winter}
+	if {season.autumn} is true:
+		set {_autumn} to a random integer between {@autumnmin} and {@autumnmax}
+		set {season.temp} to {_autumn}
+	if {season.summer} is true:
+		set {_summer} to a random integer between {@summermin} and {@summermax}
+		set {season.temp} to {_summer}
+	if {season.spring} is true:
+		set {_spring} to a random integer between {@springmin} and {@springmax}
+		set {season.temp} to {_spring}		
