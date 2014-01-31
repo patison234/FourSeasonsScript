@@ -1,0 +1,10 @@
+every 30 minutes:
+	loop all players:
+		if {season.temp} is smaller than {@wintermax}:
+			if loop-player's chestplate is empty:
+				apply poison 2 to loop-player for 1 minutes
+				stop
+		if {season.temp} is greater than {@summermin}:
+			if loop-player's helmet is empty:
+				apply nausea 2 to loop-player for 1 minutes
+				stop
