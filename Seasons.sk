@@ -39,3 +39,18 @@ every 20 minutes:
 	if {season.spring} is true:
 		set {_spring} to a random integer between {@springmin} and {@springmax}
 		set {season.temp} to {_spring}		
+
+
+every 1 seconds:
+	if {season.winter} is true:
+		set {season.season} to "Zima"
+		stop
+	if {season.autumn} is true:
+		set {season.season} to "Jesien"
+		stop
+	if {season.summer} is true:
+		set {season.season} to "Lato"
+		stop
+	if {season.spring} is true:
+		set {season.season} to "Wiosna"
+		stop
