@@ -9,6 +9,7 @@ command /@komenda} [<text>] [<text>]:
 				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
 				send "&6/{@komenda} score off - &awylacza scoreboarda!"
 				send "&6/{@komenda} score on - &aWlacza scoreboarda!"
+				send "&6/{@komenda} autor - &apokazuje autora skryptu!
 				send "&8=========================="
 				stop
 			else:
@@ -16,6 +17,7 @@ command /@komenda} [<text>] [<text>]:
 				send "&4    Player Commands       "
 				send "&6/{@komenda} - &aPokazuje liste komend!"
 				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&6/{@komenda} autor - &apokazuje autora skryptu!
 				send "&8=========================="
 				stop
 		if arg 1 is "help" or "pomoc":
@@ -26,6 +28,7 @@ command /@komenda} [<text>] [<text>]:
 				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
 				send "&6/{@komenda} score off - &awylacza scoreboarda!"
 				send "&6/{@komenda} score on - &aWlacza scoreboarda!"
+				send "&6/{@komenda} autor - &apokazuje autora skryptu!
 				send "&8=========================="
 				stop
 			else:
@@ -33,6 +36,41 @@ command /@komenda} [<text>] [<text>]:
 				send "&4    Player Commands       "
 				send "&6/{@komenda} - &aPokazuje liste komend!"
 				send "&6/{@komenda} temp - &aPokazuje aktualna temperature!"
+				send "&6/{@komenda} autor - &apokazuje autora skryptu!
 				send "&8=========================="
 				stop
-				
+		if arg 1 is "autor":
+			send "&7----------------------------------------------"
+			send " &8Autor: &aPatisonPlayGames"
+			send " &8Nazwa: &aFourSeason"
+			send "&8 &8&nYou&4&nTube:&a &nwww.youtube.com/PatisonPlayGames"
+			send "&7----------------------------------------------"
+			stop
+		if arg 1 is "temp" or "temperatura":
+			send "{@tag} &aAktualna temperatura: &c%{season.temp}%"
+			stop
+		if arg 1 is "score":
+			if arg 2 is "on":
+				if player has permission "season.*" or "season.score.on":
+					set {season.score} to true
+					send "{@tag} &aWlaczano scoreboard!"
+					stop
+				else:
+					send "{@tag} {@permission}"
+					stop
+			if arg 1 is "off":
+				if player has permission "season.*" or "season.score.off":
+					set {season.score} to false
+					send "{@tag} &aWylaczano scoreboard!"
+					stop
+				else:
+					send "{@tag} {@permission}"
+					stop
+		if arg 1 is "reload" or "przeladuj":
+			if player has permission "season.*" or "season.reload":
+				execute console command "/sk reload {@sk}"
+				send "{@tag} &aPrzeladowano!"
+				stop
+			else:
+				send "{@tag} {@permission}"
+				stop
